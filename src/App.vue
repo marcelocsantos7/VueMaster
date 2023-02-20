@@ -6,7 +6,7 @@
     <Nav />
     <Content v-if="visibilidade"/>
   </div>
-</template>
+</template> 
 
 <script>
 import Nav from '@/components/layouts/Nav.vue'

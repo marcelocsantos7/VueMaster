@@ -3,11 +3,16 @@
     <div>
         <h1>{{ titulo }}</h1>
         <button @click="atualizarComponente()">Atualizar</button>
+        <button @click="conteudo = 'Home'">Home</button>
+        <button @click="conteudo = 'Publicar'">Publicar Vaga</button>
         <p>Propriedade com v-bind :class="$style['teste']" = {{ $style }}</p>
         <div :class="$style['teste']">Classe teste</div>
         <div>variavel data: {{ teste }}</div>
-        <Home />
-        <Publicar />
+        <!-- <Home />
+        <Publicar /> -->
+        <KeepAlive>
+          <component :is="conteudo" />
+        </KeepAlive> 
     </div>
 
 </template>
@@ -30,9 +35,11 @@ export default {
   data: () => {
     return {
         teste: 'atualizei e comitei',
-        titulo: 'Componente Conteudo'
+        titulo: 'Componente Conteudo',
+        conteudo: 'Home'
     }
   },
+  /*
   beforeCreate(){
     console.log('Antes de criar', this.teste)
   },
@@ -59,7 +66,7 @@ export default {
   unmounted(){
     console.log('Desmontado')
   },
-  /*
+
   errorCaptured(){
     console.log('Erro capturado')
   },
