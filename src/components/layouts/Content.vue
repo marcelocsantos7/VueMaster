@@ -29,7 +29,7 @@ export default {
   },
   data: () => {
     return {
-        teste: 'xupeta',
+        teste: 'atualizei e comitei',
         titulo: 'Componente Conteudo'
     }
   },
