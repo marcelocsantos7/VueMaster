@@ -8,19 +8,11 @@
 
     <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
       <div class="col">
-        <Vaga :titulo="vaga.titulo" :descricao="vaga.descricao" :salario="vaga.salario" :modalidade="vaga.modalidade"
-          :tipo="vaga.tipo" :publicacao="vaga.publicacao" />
+        <!-- <Vaga :titulo="vaga.titulo" :descricao-vaga="vaga.descricao" :salario="vaga.salario" :modalidade="vaga.modalidade"
+          :tipo="vaga.tipo" :publicacao="vaga.publicacao" /> -->
+        <Vaga v-bind="vaga" />
       </div>
     </div>
-
-    <!-- <div class="row mt-5">
-      <div class="col-6">
-        <Vaga />
-      </div>
-      <div class="col-6">
-        <Vaga />
-      </div>
-    </div> -->
 
     <div class="row mt-5">
       <div class="col-4">
@@ -51,7 +43,7 @@ export default {
     vagas: [
       {
         titulo: 'Analista Programador PHP Pleno',
-        descricao: 'Profissional com conhecimentos em PHP, Laravel e MySQL. Necessário 3 anos de experiências. Atuará na manutenção de sistemas legados da empresa.',
+        // descricao: 'Profissional com conhecimentos em PHP, Laravel e MySQL. Necessário 3 anos de experiências. Atuará na manutenção de sistemas legados da empresa.',
         salario: 6000,
         modalidade: 'Home Office',
         tipo: 'PJ',
