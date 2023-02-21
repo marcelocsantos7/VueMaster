@@ -1,20 +1,18 @@
 <template>
-
-    <div>
-        <h1>{{ titulo }}</h1>
-        <button @click="atualizarComponente()">Atualizar</button>
-        <button @click="conteudo = 'Home'">Home</button>
-        <button @click="conteudo = 'Publicar'">Publicar Vaga</button>
-        <p>Propriedade com v-bind :class="$style['teste']" = {{ $style }}</p>
+  <div>
+    <h1>{{ titulo }}</h1>
+    <!-- <button @click="atualizarComponente()">Atualizar</button> -->
+    <button @click="conteudo = 'Home'">Home</button>
+    <button @click="conteudo = 'Publicar'">Publicar Vaga</button>
+    <!-- <p>Propriedade com v-bind :class="$style['teste']" = {{ $style }}</p>
         <div :class="$style['teste']">Classe teste</div>
-        <div>variavel data: {{ teste }}</div>
-        <!-- <Home />
+        <div>variavel data: {{ teste }}</div> -->
+    <!-- <Home />
         <Publicar /> -->
-        <KeepAlive>
-          <component :is="conteudo" />
-        </KeepAlive> 
-    </div>
-
+    <KeepAlive>
+      <component :is="conteudo" />
+    </KeepAlive>
+  </div>
 </template>
 
 <script>
@@ -22,32 +20,32 @@ import PublicarVaga from '@/views/PublicarVaga.vue'
 import Home from '@/views/Home.vue'
 
 export default {
-  name:'Content',
-  components:{
-      Home,
-      Publicar: PublicarVaga,
+  name: 'Content',
+  components: {
+    Home,
+    Publicar: PublicarVaga,
   },
-  methods:{
-    atualizarComponente(){
-        this.titulo += '*' 
+  methods: {
+    atualizarComponente() {
+      this.titulo += '*'
     }
   },
   data: () => {
     return {
-        teste: 'atualizei e comitei',
-        titulo: 'Componente Conteudo',
-        conteudo: 'Home'
+      teste: 'atualizei e comitei',
+      titulo: 'Componente Conteudo',
+      conteudo: 'Home'
     }
   },
   /*
   beforeCreate(){
     console.log('Antes de criar', this.teste)
   },
-  
+
   created(){
     console.log('Criado', this.teste)
   },
-  
+
   beforeMount(){
     console.log('antes de montar')
   },
@@ -91,7 +89,7 @@ export default {
 </script>
 
 <style module>
-    .teste{
-        background-color: chocolate;
-    }
+.teste {
+  background-color: chocolate;
+}
 </style>
